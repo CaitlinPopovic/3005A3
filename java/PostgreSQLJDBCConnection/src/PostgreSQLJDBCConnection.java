@@ -14,14 +14,21 @@ public class PostgreSQLJDBCConnection {
 // Connect to the database
             Connection conn = DriverManager.getConnection(url, user, password);
             if (conn != null) {
-                System.out.println("Connected to PostgreSQL successfully!");
+                System.out.println("Connected to PostgreSQL successfully!\n");
 
                 // Function calls
-                System.out.println("Calling getAllStudents: \n");
+                System.out.println("Calling getAllStudents: ");
                 QueryHelpers.getAllStudents(conn);
-                System.out.println("\nCalling addStudent: ");
+
+                System.out.println("\nCalling addStudent (adding a new student named Jenn): ");
                 QueryHelpers.addStudent(conn, "Jenn", "McAllister",
                         "jennmcallister@example.com", LocalDate.of(2025, 9, 11));
+
+                System.out.println("Calling updateStudentEmail (changing John's email): ");
+                QueryHelpers.updateStudentEmail(conn, 1, "john.is.awesome@example.com");
+
+                System.out.println("Calling deleteStudent (deleting Jane): ");
+                QueryHelpers.deleteStudent(conn, 2);
 
 
             } else {
