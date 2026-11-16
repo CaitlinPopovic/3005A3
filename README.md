@@ -11,3 +11,5 @@ In the "Function calls" section, other than the getAllStudents() function, you c
 Each function called will perform the associated SQL query in the database. Changes to the table will be shown in PostgreSQL. 
 
 Run the file to view record information / manipulate records in the database! :) 
+
+Youtube video: https://youtu.be/h7uM-MS5ZBA 
